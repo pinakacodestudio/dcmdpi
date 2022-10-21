@@ -105,11 +105,11 @@ function labelbox($colname, $label, $value)
 function editbox($colname, $label, $fieldname, $placeholder, $value, $script = "")
 {
     echo '<div class="col-md-' . $colname . '">
-              <fieldset class="form-group">
-              <label class="form-label semibold">' . $label . '</label>
-              <input type="text" ' . $script . ' name="' . $fieldname . '" value="' . $value . '" id="' . $fieldname . '" placeholder ="' . $placeholder . '" class="form-control">
-              </fieldset>
-            </div>';
+            <fieldset class="form-group">
+                <label class="form-label semibold">' . $label . '</label>
+                <input type="text" ' . $script . ' name="' . $fieldname . '" value="' . $value . '" id="' . $fieldname . '" placeholder ="' . $placeholder . '" class="form-control">
+            </fieldset>
+        </div>';
 }
 function textareabox($colname, $label, $fieldname, $placeholder, $value)
 {

@@ -7,6 +7,7 @@ $mainPage = base_url() . "Order/";
 $detailPage = base_url() . "Order/sendmsg/";
 $jobPage = base_url() . "Order/jobwork/";
 
+
 $searchTitle = "Search Order";
 $ses_customerid = $this->session->userdata['orders']['customerid'];
 $ses_itemno = $this->session->userdata['orders']['itemno'];
@@ -145,6 +146,11 @@ $ses_sortby = $this->session->userdata['orders']['sortby'];
 
     jQuery(document).ready(function() {
         $('.datetimepicker').datepicker({ dateFormat: 'dd-mm-yy' });
+        $(document).on("click","#send_whatsapa",function(){
+            $whatsAppURL = "https://wa.me/";
+            $receiverNo = "+91"+$("#mobileno").val().trim();
+            $message = "?text="+encodeURI($("#message").val().trim());
+        });
     });
     
     function deleteBox(frmname) {
