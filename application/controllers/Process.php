@@ -56,8 +56,9 @@ class Process extends CI_Controller
 					$rs = $this->Queries->getSingleRecord($qry);
 					if ($rs != null) {
 						$cdate = date('Y-m-d H:i:s');
-						$sdate = date_create($rs->end_removing);
-						$sdate = date_format($sdate, 'Y-m-d H:i:s');
+						$sdate = new DateTimeImmutable($rs->end_removing);
+						$sdate = $sdate->format('Y-m-d H:i:s');
+						
 						$cdate = new DateTime($cdate);
 						$sdate = new DateTime($sdate);
 						$diff = date_diff($cdate, $sdate);
@@ -104,8 +105,8 @@ class Process extends CI_Controller
 					$rs = $this->Queries->getSingleRecord($qry);
 					if ($rs != null) {
 						$cdate = date('Y-m-d H:i:s');
-						$sdate = date_create($rs->dettach_panel);
-						$sdate = date_format($sdate, 'Y-m-d H:i:s');
+						$sdate = new DateTimeImmutable(str_replace('/', '-', $rs->dettach_panel));
+						$sdate = $sdate->format('Y-m-d H:i:s');
 						$cdate = new DateTime($cdate);
 						$sdate = new DateTime($sdate);
 						$diff = date_diff($cdate, $sdate);

@@ -189,10 +189,9 @@ $ses_sortby = $this->session->userdata['orders']['sortby'];
 
     });
 
-
 	var TeamDetailPostBackURL = '<?= $detailPage; ?>';
 	$(function () {
-		$(".anchorDetail").click(function () {
+		$(document).on('click','.anchorDetail',function () {
 			debugger;
 			var $buttonClicked = $(this);
 			var id = $buttonClicked.attr('data-id');
