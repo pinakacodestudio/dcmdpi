@@ -101,7 +101,7 @@ $ses_sortby = $this->session->userdata['orders']['sortby'];
                                         <td><?= $post->main_party; ?></td>
                                         <td><?= $post->item_no . " - " . $post->part_type; ?></td>
                                         <td><?= $post->batch_qty; ?></td>
-                                        <td><?= sprintf("%0.3f", $post->total_weight); ?>Kg</td>
+                                        <td><?= round($post->total_weight); ?>Kg</td>
 
                                         <td><?php echo '<a href="javascript:void(0);" data-id="' . $post->id . '" class="btn btn-primary btn-gradient btn-alt anchorDetail"><span class="fa fa-send pr5"></span></a>'; ?></td>
                                         <td><?php echo anchor($addPage . $post->id, '<span class="fa fa-pencil pr5"></span></a>', ['class' => 'btn btn-success btn-gradient btn-alt']); ?></td>

@@ -85,8 +85,9 @@ $managePage = $operation . " Dispatch";
                 </div>
                 <div class="panel-body">
                     <?php
+                    print_r($orderlist);
                     datepicker('4', 'Dispatch Date', 'dispatch_date', 'Enter Dispatch Date', $val_dispatch_date);
-                    dropdownbox('4', 'Order No.', 'orderid2', $orderlist, $val_orderid, $disabled . ' onChange="javascript:getOrderDetail(this.value)"');
+                    dropdownbox('4', 'Order No.', 'orderid2', $orderlist, $val_orderid,'onChange="javascript:getOrderDetail(this.value)"');
                     editbox('4', 'Dispatch Chalan No.', 'chalan_no', 'Enter Dispatch Chalan No.', $val_chalan_no, 'disabled');
                     echo '<div class="clearfix"></div>';
                     dropdownbox('4', 'Dispatch Party', 'dispatch_party', $customerlist, $val_dispatch_party);

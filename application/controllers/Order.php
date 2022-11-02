@@ -315,13 +315,13 @@ class Order extends CI_Controller
 		$tabcustomer = TBL_CUSTOMER;
 		$taborder = TBL_ORDER;
 
-		$query = "select $taborder.chalan_no,$taborder.batch_qty,$tabcustomer.company_name,$tabcustomer.customer_mobile,$taborder.item_no,$taborder.part_type from " . TBL_ORDER . " LEFT JOIN $tabcustomer on $tabcustomer.id = $taborder.main_party where $taborder.id=" . $id;
+		$query = "select $taborder.chalan_no,$taborder.batch_qty,c1.company_name,c2.customer_mobile,$taborder.item_no,$taborder.part_type from " . TBL_ORDER . " LEFT JOIN $tabcustomer as c1 on c1.id = $taborder.from_forgine_party LEFT JOIN $tabcustomer as c2 on c2.id = $taborder.main_party where $taborder.id=" . $id;
 		
 		$order = $this->Queries->getSingleRecord($query);
 		if ($order != null) {
 			$mobile = $order->customer_mobile;
 			$message = "Material Received,\n";
-			// $message .= $query. " \n";
+			$message .= $query. " \n";
 			$message .= "Item - " . $order->item_no . "-".$order->part_type ."\n";
 			$message .= "Qty - " . $order->batch_qty . " Nos\n";
 			$message .= "Challan No - " . $order->chalan_no . " \n";

@@ -303,8 +303,8 @@ class Dispatch extends CI_Controller
 		if ($dispatch != null) {
 			$mobile = $dispatch->customer_mobile;
 			$message = "Material Dispatched \n";
-			$message .= "Item-" . $dispatch->item_no . " " . $dispatch->part_type . " \n";
-			$message .= "Qty-" . $dispatch->batch_qty . " Nos\n";
+			$message .= "Item - " . $dispatch->item_no . " " . $dispatch->part_type . " \n";
+			$message .= "Qty - " . $dispatch->batch_qty . " Nos\n";
 			$message .= "Del. At - " . $dispatch->company_name . " \n";
 			$message .= "Thank You - DPI";
 			$this->load->view('Dispatch/sendmsg', ['id' => $id, 'mobile' => $mobile, 'message' => $message,]);
